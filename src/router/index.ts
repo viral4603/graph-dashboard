@@ -14,6 +14,10 @@ const routes: Array<RouteRecordRaw> = [
         name:'home',
         component:AppHome
       },
+      {
+        path:'',
+        redirect:'home'
+      }
     ]
   },
 ]
