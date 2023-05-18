@@ -32,3 +32,12 @@ header {
     color: $secondary;
     border: 2px solid $success;
 }
+.sidebar {
+    transition: all 0.5s;
+}
+.pointer {
+    cursor: pointer;
+}
+.toggle-icon {
+    display: none;
+}

@@ -1,4 +1,5 @@
 <template>
+        <input type="checkbox" class="d-none" id="toggle-menu">
         <aside class="sidebar h-100 flex-shrink-0">
             <app-sidebar></app-sidebar>
         </aside>

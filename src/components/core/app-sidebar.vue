@@ -1,5 +1,9 @@
 <template>
   <nav class="d-flex flex-column h-100 border-end">
+    <label for="toggle-menu" class="pointer toggle-icon" title="open menu"
+      ><span class="nav-icon icon-circle-right"></span
+    ></label>
+
     <!-- brand:name:start -->
     <div
       class="brand-name w-100 d-flex align-items-center justify-content-center border-bottom flex-shrink-0"
@@ -83,7 +87,7 @@ export default defineComponent({
     if (localStorage.getItem("themeType") == "dark") {
       const appElement = document.getElementById("app");
       appElement?.classList.add("dark-mode");
-      this.isDarkTheme = true
+      this.isDarkTheme = true;
     }
   },
   methods: {

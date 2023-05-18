@@ -1,0 +1,33 @@
+//user-name
+@media only screen and (max-width: 768px) { 
+    .toggle-icon {
+        .nav-icon {
+            font-size: 24px;
+        }
+        display: inline-block;
+        position: absolute;
+        top: 20px;
+        transition: all 0.5s;
+        right: -55px;
+        transform-origin: center;
+    }
+    #toggle-menu:checked + .sidebar {
+        position:inherit;
+        transform: translateX(0px);
+        .toggle-icon {
+            right: -25px;
+            transform: scaleX(-1);
+        }
+    }
+     .sidebar {
+        position:absolute;
+        transform: translateX(-60px);
+    } 
+    .user-details .user-name {
+        display: none;
+    }
+    .nav {
+        width: 100%;
+        justify-content: space-around !important;
+    }
+}

@@ -87,7 +87,7 @@
       <!-- time-end -->
       <!-- cost-start -->
       <div
-        class="col-12 col-md-6 col-lg-4 p-3 border-end border-bottom d-flex flex-column"
+        class="col-12 col-md-6 col-lg-4 p-3 border-end border-bottom d-flex flex-column h-50"
       >
         <div class="heading d-flex justify-content-between align-items-center">
           <h2 class="m-0 fs-3">Cost</h2>
@@ -108,7 +108,7 @@
       <!-- cost-end -->
       <!-- workload-start -->
       <div
-        class="col-12 col-md-6 col-lg-4 p-3 border-end border-bottom d-flex flex-column"
+        class="col-12 col-md-6 col-lg-4 p-3 border-end border-bottom d-flex flex-column h-50"
       >
         <div class="heading d-flex justify-content-between align-items-center">
           <h2 class="m-0 fs-3">Workload</h2>

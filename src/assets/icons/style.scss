@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?v1jj39');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?v1jj39#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?v1jj39') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?v1jj39') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?v1jj39##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?y6w1oz');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?y6w1oz#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?y6w1oz') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?y6w1oz') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?y6w1oz##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -125,6 +125,16 @@
 .icon-file-empty {
   &:before {
     content: $icon-file-empty; 
+  }
+}
+.icon-cancel-circle {
+  &:before {
+    content: $icon-cancel-circle; 
+  }
+}
+.icon-circle-right {
+  &:before {
+    content: $icon-circle-right; 
   }
 }
 
