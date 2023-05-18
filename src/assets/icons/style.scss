@@ -1,0 +1,130 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?v1jj39');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?v1jj39#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?v1jj39') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?v1jj39') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?v1jj39##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-settings {
+  &:before {
+    content: $icon-settings; 
+  }
+}
+.icon-graph {
+  &:before {
+    content: $icon-graph; 
+  }
+}
+.icon-graphic_eq {
+  &:before {
+    content: $icon-graphic_eq; 
+  }
+}
+.icon-bar-chart-1 {
+  &:before {
+    content: $icon-bar-chart-1; 
+  }
+}
+.icon-bar-chart {
+  &:before {
+    content: $icon-bar-chart; 
+  }
+}
+.icon-calendar {
+  &:before {
+    content: $icon-calendar; 
+  }
+}
+.icon-help-circle {
+  &:before {
+    content: $icon-help-circle; 
+  }
+}
+.icon-briefcase {
+  &:before {
+    content: $icon-briefcase; 
+  }
+}
+.icon-user-plus {
+  &:before {
+    content: $icon-user-plus; 
+  }
+}
+.icon-home-1 {
+  &:before {
+    content: $icon-home-1; 
+  }
+}
+.icon-users {
+  &:before {
+    content: $icon-users; 
+  }
+}
+.icon-area-chart {
+  &:before {
+    content: $icon-area-chart; 
+  }
+}
+.icon-picture-file {
+  &:before {
+    content: $icon-picture-file; 
+  }
+}
+.icon-plus {
+  &:before {
+    content: $icon-plus; 
+  }
+}
+.icon-screen-full {
+  &:before {
+    content: $icon-screen-full; 
+  }
+}
+.icon-list {
+  &:before {
+    content: $icon-list; 
+  }
+}
+.icon-time {
+  &:before {
+    content: $icon-time; 
+  }
+}
+.icon-target {
+  &:before {
+    content: $icon-target; 
+  }
+}
+.icon-home {
+  &:before {
+    content: $icon-home; 
+  }
+}
+.icon-file-empty {
+  &:before {
+    content: $icon-file-empty; 
+  }
+}
+
