@@ -1,5 +1,5 @@
 <template>
-  <div class="main-content flex-grow-1 overflow-auto">
+  <div class="main-content overflow-auto flex-grow-1">
     <div class="row g-0 h-100">
       <!-- health-start -->
       <div class="col-12 col-md-6 col-lg-4 p-3 border-end border-bottom">
@@ -31,7 +31,7 @@
       <!-- health-end -->
       <!-- Task-start -->
       <div
-        class="col-12 col-md-6 col-lg-4 p-3 border-end border-bottom d-flex flex-column h-50"
+        class="col-12 col-md-6 col-lg-4 p-3 border-end border-bottom d-flex flex-column justify-content-between"
       >
         <div class="heading d-flex justify-content-between align-items-center">
           <h2 class="m-0 fs-3">Task</h2>
@@ -42,7 +42,7 @@
           </div>
         </div>
         <div
-          class="chart d-flex justify-content-center align-items-center w-100"
+          class="chart dounghnut-chart d-flex justify-content-center"
         >
           <Doughnut :data="chartData" :options="chartOptions" />
         </div>
@@ -50,7 +50,7 @@
       <!-- Task-end -->
       <!-- progress-start -->
       <div
-        class="col-12 col-md-6 col-lg-4 p-3 border-end border-bottom d-flex flex-column h-50"
+        class="col-12 col-md-6 col-lg-4 p-3 border-end border-bottom d-flex flex-column justify-content-between"
       >
         <div class="heading d-flex justify-content-between align-items-center">
           <h2 class="m-0 fs-3">Progress</h2>
@@ -60,14 +60,14 @@
             <span class="fs-5 nav-icon icon-help-circle ms-2"></span>
           </div>
         </div>
-        <div class="bar-chart d-flex align-items-center flex-grow-1">
+        <div class="chart progress-chart">
           <Bar :data="progressBarData" :options="ProgressBarOption" />
         </div>
       </div>
       <!-- progress-end -->
       <!-- time-start -->
       <div
-        class="col-12 col-md-6 col-lg-4 p-3 border-end border-bottom d-flex flex-column h-50"
+        class="col-12 col-md-6 col-lg-4 p-3 border-end border-bottom d-flex flex-column justify-content-between"
       >
         <div class="heading d-flex justify-content-between align-items-center">
           <h2 class="m-0 fs-3">Time</h2>
@@ -77,17 +77,18 @@
             <span class="fs-5 nav-icon icon-help-circle ms-2"></span>
           </div>
         </div>
-        <div class="bar-chart d-flex align-items-center flex-grow-1">
+        <div class="chart bar-chart">
           <Bar
             :data="timeLoaddata"
             :options="timeLoadOption"
+            :plugins="[legendMargin]"
           />
         </div>
       </div>
       <!-- time-end -->
       <!-- cost-start -->
       <div
-        class="col-12 col-md-6 col-lg-4 p-3 border-end border-bottom d-flex flex-column h-50"
+        class="col-12 col-md-6 col-lg-4 p-3 border-end border-bottom d-flex flex-column justify-content-between"
       >
         <div class="heading d-flex justify-content-between align-items-center">
           <h2 class="m-0 fs-3">Cost</h2>
@@ -97,18 +98,19 @@
             <span class="fs-5 nav-icon icon-help-circle ms-2"></span>
           </div>
         </div>
-        <div class="bar-chart flex-grow-1 d-flex align-items-center">
+        <div class="chart bar-chart">
           <Bar
             :data="barChartData"
             :options="barChartOptions"
             :style="myStyle"
+            :plugins="[legendMargin]"
           />
         </div>
       </div>
       <!-- cost-end -->
       <!-- workload-start -->
       <div
-        class="col-12 col-md-6 col-lg-4 p-3 border-end border-bottom d-flex flex-column h-50"
+        class="col-12 col-md-6 col-lg-4 p-3 border-end border-bottom d-flex flex-column justify-content-between"
       >
         <div class="heading d-flex justify-content-between align-items-center">
           <h2 class="m-0 fs-3">Workload</h2>
@@ -119,11 +121,12 @@
             <span class="fs-5 nav-icon icon-help-circle ms-2"></span>
           </div>
         </div>
-        <div class="bar-chart d-flex align-items-center flex-grow-1">
+        <div class="chart bar-chart">
           <Bar
             :data="workLoaddata"
             :options="workLoadOption"
             :style="myStyle"
+            :plugins="[legendMargin]"
           />
         </div>
       </div>
@@ -145,6 +148,7 @@ import {
   LinearScale
 } from "chart.js";
 import ChartJSPluginDatalabels from "chartjs-plugin-datalabels";
+import LegendMargin from "../plugins/legendMargin";
 export default defineComponent({
   components: {
     Doughnut,
@@ -152,6 +156,7 @@ export default defineComponent({
   },
   data() {
     return {
+      legendMargin:LegendMargin,
       statistics: [
         {
           title: "Time",
@@ -213,7 +218,7 @@ export default defineComponent({
         responsive: false,
         maintainAspectRatio: false,
         radius: 100,
-        cutout: 105,
+        cutout: 100,
         spacing: 2,
         plugins: {
           legend: {
@@ -280,6 +285,9 @@ export default defineComponent({
             },
           },
           x: {
+            ticks:{
+              padding:-10,  
+            },
             grid: {
               display: false,
             },
@@ -494,7 +502,7 @@ export default defineComponent({
           "Construction",
           "Post Construction",
           "Post Col",
-          "",
+          ""
         ],
         datasets: [
           {
@@ -508,21 +516,14 @@ export default defineComponent({
               "rgb(101 203 110)",
               "rgb(101 203 110)",
             ],
-            stack: "Stack 0",
           },
         ],
       },
       ProgressBarOption: {
-        base: 0,
         indexAxis: "y",
         responsive: true,
         maintainAspectRatio: false,
         barThickness: 20,
-        categoryPercentage: 1.0,
-        barPercentage: 0.5,
-        interaction: {
-          intersect: false,
-        },
         scales: {
           x: {
             stacked: true,
@@ -546,7 +547,6 @@ export default defineComponent({
               display: false,
             },
             ticks: {
-              tickLength: 150,
               crossAlign: "far",
               font: {
                 size: 16,
@@ -588,7 +588,7 @@ export default defineComponent({
       Title,
       Tooltip,
       Legend,
-      ChartJSPluginDatalabels
+      ChartJSPluginDatalabels      
     );
   },
   computed: {

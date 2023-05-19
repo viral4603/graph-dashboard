@@ -28,16 +28,30 @@ header {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .nav-link.router-link-active {
     color: $secondary;
     border: 2px solid $success;
+    background-color: rgba($primary,0.1);
 }
+
 .sidebar {
     transition: all 0.5s;
 }
+
 .pointer {
     cursor: pointer;
 }
+
 .toggle-icon {
     display: none;
+}
+
+.chart {
+    min-height: 380px;
+    // max-height: 50%;
+}
+
+.chart.dounghnut-chart {
+    min-height: 360px;
 }

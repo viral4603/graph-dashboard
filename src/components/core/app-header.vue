@@ -5,7 +5,7 @@
       <h5 class="mb-0 user-name">Govalle Constructor</h5>
       <div class="user-profile d-flex align-items-center">
         <figure
-          class="user-image rounded-circle overflow-hidden bg-dark mb-0 ms-4 ms-md-2"
+          class="user-image rounded-circle overflow-hidden bg-dark mb-0 ms-4 ms-lg-2"
         >
           <img src="../../assets/images/cook-boy.png" class="img-fluid" alt="user-image" />
         </figure>
@@ -17,7 +17,7 @@
     <!-- user-detials-end -->
     <!-- tab-item-start -->
     <div class="tab-items d-flex h-100 col-10 col-md-6 col-xl-4 justify-content-center">
-      <ul class="nav h-100 align-items-center">
+      <ul class="nav h-100 align-items-center flex-nowrap">
         <li class="nav-item h-100">
           <a class="nav-link d-flex h-100 align-items-center p-md-3 px-xl-4" to="/"
             ><span class="nav-icon icon-calendar"></span

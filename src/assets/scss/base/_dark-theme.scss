@@ -1,4 +1,15 @@
 #app.dark-mode {
     transition: all 0.5s;
     color: $white !important;
+
+    .nav-link.router-link-active {
+        background-color: none !important;
+    }
+    .sidebar {
+        background: $dark;
+    }
+    main {
+        background: $dark-primary;
+    }
+
 }
