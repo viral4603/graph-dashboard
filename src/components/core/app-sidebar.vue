@@ -8,7 +8,7 @@
     <div
       class="brand-name w-100 d-flex align-items-center justify-content-center border-bottom flex-shrink-0"
     >
-      <h1 class="mb-0 brand-title fs-5 text-primary">
+      <h1 class="mb-0 brand-title fs-5">
         <span class="nav-icon icon-target"></span>
       </h1>
     </div>
@@ -81,24 +81,38 @@ export default defineComponent({
   data() {
     return {
       isDarkTheme: false,
+      prefersDarkScheme: null as any,
+      theme: "" as string | null,
     };
   },
   created() {
-    if (localStorage.getItem("themeType") == "dark") {
-      const appElement = document.getElementById("app");
-      appElement?.classList.add("dark-mode");
-      this.isDarkTheme = true;
+    this.theme = localStorage.getItem("themeType");
+    this.prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    if (this.prefersDarkScheme.matches || this.theme == "dark") {
+      this.toggleDarkTheme();
     }
   },
   methods: {
+    /**
+     * @name changeTheme
+     * @description toggle between dark and light theme
+     */
     changeTheme() {
-      const appElement = document.getElementById("app");
-      this.isDarkTheme
-        ? appElement?.classList.add("dark-mode")
-        : appElement?.classList.remove("dark-mode");
-      this.isDarkTheme
-        ? localStorage.setItem("themeType", "dark")
-        : localStorage.setItem("themeType", "light");
+      if (this.prefersDarkScheme.matches || this.theme === "dark") {
+        document.body.classList.toggle("dark-theme");
+        localStorage.setItem("themeType", "light");
+      } else {
+        this.toggleDarkTheme();
+      }
+    },
+    /**
+     * @name toggleDarkTheme
+     * @description active and set specification of dark theme
+     */
+    toggleDarkTheme() {
+      document.body.classList.toggle("dark-theme");
+      this.isDarkTheme = true;
+      localStorage.setItem("themeType", "dark");
     },
   },
 });
