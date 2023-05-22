@@ -1,15 +1,18 @@
-#app.dark-mode {
-    transition: all 0.5s;
-    color: $white !important;
+body.dark-theme {
+    --bs-body-color:#ffffff;
+    --bs-primary-rgb:143,147,157;
+}
 
+.dark-theme #app {
+    // color: $white !important;
+    .nav-link {
+        color: rgba(var(--bs-primary-rgb),1);
+    }
     .nav-link.router-link-active {
         background-color: none !important;
     }
     .sidebar {
         background: $dark;
     }
-    main {
-        background: $dark-primary;
-    }
-
+    background: $dark-primary;
 }

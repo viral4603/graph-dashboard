@@ -218,7 +218,7 @@ export default defineComponent({
         responsive: false,
         maintainAspectRatio: false,
         radius: 100,
-        cutout: 100,
+        cutout: 110,
         spacing: 2,
         plugins: {
           legend: {
