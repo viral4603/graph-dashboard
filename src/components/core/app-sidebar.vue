@@ -82,13 +82,13 @@ export default defineComponent({
     return {
       isDarkTheme: false,
       prefersDarkScheme: null as any,
-      theme: "" as string | null,
+      theme: "light" as string | null,
     };
   },
   created() {
     this.theme = localStorage.getItem("themeType");
     this.prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-    if (this.prefersDarkScheme.matches || this.theme == "dark") {
+    if (this.prefersDarkScheme.matches && this.theme !== "light" || this.theme == "dark") {
       this.toggleDarkTheme();
     }
   },
@@ -98,9 +98,11 @@ export default defineComponent({
      * @description toggle between dark and light theme
      */
     changeTheme() {
-      if (this.prefersDarkScheme.matches || this.theme === "dark") {
+      this.theme = localStorage.getItem("themeType");
+      if (this.theme === "dark") {
         document.body.classList.toggle("dark-theme");
         localStorage.setItem("themeType", "light");
+        this.isDarkTheme = false;
       } else {
         this.toggleDarkTheme();
       }
